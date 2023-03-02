@@ -73,7 +73,7 @@ runs:
 
     - name: Generate Javadoc with Maven
       if: inputs.project == 'maven' && inputs.custom-command == ''
-      run: mvn javadoc:aggregate
+      run: mvn dokka:dokka
       shell: bash
 
     - name: Generate Javadoc with Gradle
