@@ -86,6 +86,9 @@ runs:
       run: ${{ inputs.custom-command }}
       shell: bash
 
+    - name: aggregate dokka from modules
+        run: mkdir -p target/dokka-all && cp -r `find -name dokka` target/dokka-all
+
     - name: Deploy to GitHub Page 🚀 with Maven
       if: ${{ inputs.without-deploy == 'false' && inputs.project == 'maven' }}
       uses: JamesIves/github-pages-deploy-action@v4.4.1
@@ -93,5 +96,5 @@ runs:
         token: ${{ inputs.GITHUB_TOKEN }}
         branch: ${{ inputs.javadoc-branch }}
         clean: true
-        folder: */target/dokka
+        folder: target/dokka-all
         target-folder: ${{ inputs.target-folder }}
