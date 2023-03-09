@@ -93,5 +93,5 @@ runs:
         token: ${{ inputs.GITHUB_TOKEN }}
         branch: ${{ inputs.javadoc-branch }}
         clean: true
-        folder: target/dokka
+        folder: */target/dokka
         target-folder: ${{ inputs.target-folder }}
