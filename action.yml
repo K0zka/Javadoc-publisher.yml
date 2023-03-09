@@ -87,8 +87,8 @@ runs:
       shell: bash
 
     - name: aggregate dokka from modules
-        run: mkdir -p target/dokka-all && cp -r `find -name dokka` target/dokka-all
-        shell: bash
+      run: mkdir -p target/dokka-all && cp -r `find -name dokka` target/dokka-all
+      shell: bash
 
     - name: Deploy to GitHub Page 🚀 with Maven
       if: ${{ inputs.without-deploy == 'false' && inputs.project == 'maven' }}
